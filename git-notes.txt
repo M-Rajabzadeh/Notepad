@@ -1,0 +1,95 @@
+ git config --global --edit   (for   config in VScode)
+
+
+git init             for initialize git in directory
+sudo rm -r .git      for delete git from dir
+
+git status
+git status -s        give you a summary
+
+git add README       for add in git status (untrack file)
+git add .            for add anything in directory
+
+git commit -m "my text"       for adding text in snapshot
+git commit
+
+git add *.md
+git reset               unstage all item in staged
+git reset <file name>
+
+.gitignore         *.txt or *.md    /src or /data(for directory)
+
+git diff   or    git diff README.md     or    git diff --staged (give you a summary)
+git difftool --staged      (open in Vscode)
+git difftool   (file name)
+
+git rm    or    rm <file>         delete file
+git rm --cached <file name>
+git rm -f <file name>
+git reset   or    git reset <file>
+git checkout <file.txt>     !!!!  undo to last snapshot
+
+git log <-2>
+git log -- stat <-3>
+git log - p <-2>             full details
+git log --preatty            advance :D
+git log -S
+
+git commit --amend          add commit to last snapshot
+git checkout main.py        for undo a file to last version (Control Z)
+
+git remote       check remote repository
+git remote -v     more ditails
+git remote add <file name> <remote link>
+git remote show <origin>          more details
+
+git fetch <file name>      give the update about remote(no data <safe>)
+
+git push -u <origin> <main>         for set branch       next time   git push
+
+git remote rename <origin> <new origin>
+git remote remove <Origin>
+
+git tag
+git tag v0.1                for your salfe
+git tag v0.1 -a             for community and ...
+git tag v0.1 -a -m "first version" <4F53GHf> <--commit id
+git log --oneline         for commit id
+
+git config alias.st status          for set command insted ...
+git config alias.last 'git log -1'
+git config --list | grep alias           for get aliases
+
+git log --oneline --graph --all          for graph
+
+##branch
+
+git branch
+git brange -a
+git branche -v                  details
+git branche -vv                 more details
+git branche --merge             you can see merg branches
+git branche --no-merged
+git branch <branch name>        create branch
+git checkout <branch name>      swich branches    !!!!!! be care(checkout*)
+git chekout -b <branch name>    create and swich
+
+git merge <branche name>
+git branche -d <branch name>    this command just word under succsessfully merge condition
+git branche -D <branch name>    force delete
+3 type merge situation  <fast forwrd>  <ort>  <conflict>
+git merge --abort        back to before merge
+
+git checkout --track
+git checkout --track remotes/origin/<remote name>      for create clone name for remote
+
+git push origin --delete <branch name>         order for delete branch in remote
+git push origin --delete <tag name>            order for delete tag in remote
+
+
+git rebase <main>                merge branch issue57 to main
+git add
+git commit
+and succsessfully
+
+advance
