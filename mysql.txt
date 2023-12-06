@@ -1,0 +1,4 @@
+## 02 - Getting Started & Installation
+quite;       ---> for exit in terminal
+
+
