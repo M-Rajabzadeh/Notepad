@@ -1,4 +1,151 @@
-## 02 - Getting Started & Installation
-quite;       ---> for exit in terminal
+## 03 - Creating Databases & Tables
+
+-- for ingore a line in code
 
 
+SELECT * FROME cats;                    Select all table
+show databases;                         Show databases
+CREATE DATABASE <name>;                 Create database
+DROP DATABASE <name>;                   Delete database
+USE <database name>;                    open database
+SELECT database();                      current database
+varchar (100) maximum (text)
+
+
+CREATE TABLE <name> (
+    name VARCHAR(50),
+    breed VARCHAR(50),
+    age INT
+);
+
+
+SHOW tables;
+
+SHOW COLUMNS FROM <table name>;
+          or
+DESC <table name>;
+          or
+DESCRIBE <table name>;
+
+
+
+
+## 04 - Inserting Data
+
+
+CREATE TABLE <cats> (
+    name VARCHAR(50),
+    age INT
+);
+
+
+-- Single Insert:
+
+INSERT INTO <cats> (name, age)
+VALUES ('Blue Steele', 5);
+
+-- Multiple Insert:
+
+INSERT INTO <cats> (name, age)
+VALUES
+  ('Meatball', 5),
+  ('Turkey', 1),
+  ('Potato Face', 15);
+
+
+-- Using NOT NULL: Force user to write somthing for fill 2 value
+
+CREATE TABLE cats2 (
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL
+);
+
+
+Quotation Note:
+
+('Nika\'s apple');     instead     ('Nika's apple')
+('She said "haha"');   is fine
+
+
+
+-- Define a table with a DEFAULT name specified:
+
+CREATE TABLE cats3  (    
+    name VARCHAR(20) DEFAULT 'unnamed',    
+    age INT DEFAULT 99  
+);
+
+
+-- Combine NOT NULL and DEFAULT:
+
+CREATE TABLE cats4  (    
+    name VARCHAR(20) NOT NULL DEFAULT 'unnamed',    
+    age INT NOT NULL DEFAULT 99 
+);
+
+-- One way of specifying a PRIMARY KEY
+
+CREATE TABLE unique_cats (
+	cat_id INT NOT NULL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL
+);
+
+-- Another option:
+
+CREATE TABLE unique_cats2 (
+	cat_id INT,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    PRIMARY KEY (cat_id)
+);
+
+
+--  AUTO_INCREMENT
+
+CREATE TABLE unique_cats3 (
+    cat_id INT AUTO_INCREMENT PRIMARY KEY ,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+);
+
+-- Another option:
+
+CREATE TABLE unique_cats3 (
+    cat_id INT AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    PRIMARY KEY (cat_id)
+);
+
+-----------------------------------------------------------
+-- Defining employees table
+
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    middle_name VARCHAR(255),
+    age INT NOT NULL,
+    current_status VARCHAR(255) NOT NULL DEFAULT 'employed',
+    PRIMARY KEY(id)
+);
+-- Another way of defining the primary key:
+
+
+
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    middle_name VARCHAR(255),
+    age INT NOT NULL,
+    current_status VARCHAR(255) NOT NULL DEFAULT 'employed'
+);
+-- A test INSERT:
+
+
+
+INSERT INTO employees(first_name, last_name, age) VALUES
+('Dora', 'Smith', 58);
+-----------------------------------------------------------
