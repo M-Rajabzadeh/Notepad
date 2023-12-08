@@ -119,6 +119,7 @@ CREATE TABLE unique_cats3 (
 );
 
 -----------------------------------------------------------
+## Some Example
 -- Defining employees table
 
 CREATE TABLE employees (
@@ -149,3 +150,27 @@ CREATE TABLE employees (
 INSERT INTO employees(first_name, last_name, age) VALUES
 ('Dora', 'Smith', 58);
 -----------------------------------------------------------
+## 05 - CRUD Basics
+CRUD   -->    CREATE - READ - UPDATE - DELETE
+
+-- SELECT <option1>, <option2> FROM cats;
+
+-- SELECT * FROM cats WHERE age = 4;
+-- SELECT name FROM cats WHERE age = 4;
+# upper case and lower case dosent matter in result
+
+-- SELECT * FROM cats WHERE cat_id=age;     IS POSSIBLE
+
+# Use 'AS' to alias a column in your results
+(it doesn't actually change the name of the column in the table)
+-- SELECT cat_id AS id, name FROM cats;
+
+# CODE: Updating Data
+UPDATE cats SET age=14 WHERE name='Misty';
+UPDATE cats SET age=14;    !!!   UPDATE ALL CASTS AS SAME AGE
+
+-- Delete all cats with name of 'Egg':
+DELETE FROM cats WHERE name='Egg';
+
+-- Delete all rows in the cats table:
+DELETE FROM cats;
